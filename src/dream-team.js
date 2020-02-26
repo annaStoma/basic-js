@@ -1,4 +1,12 @@
-module.exports = function createDreamTeam(/* members */) {
-  throw 'Not implemented';
-  // remove line with error and write your code here
+module.exports = function createDreamTeam(arr) {
+    let resultArray = new Array();
+    if (Array.isArray(arr)) {
+        arr.forEach(name => {
+            if (typeof(name) === "string") {
+                name = name.trim();
+                resultArray.push(name[0].toUpperCase());
+            }
+        });
+        return resultArray.sort().join('');
+    } else return false;
 };
